@@ -9,9 +9,8 @@
     - ca-certificates
 
 - name: Ensure PHP 7.1 trusted GPG key is installed.
-  get_url:
-    url: "{{ extra_sources_php71_gpg_url }}"
-    dest: /etc/apt/trusted.gpg.d/php.gpg
+  apt_key:
+    url: "{{ extra_sources_php71_key_url }}"
 
 - name: Ensure PHP 7.1 APT repository list is installed.
   apt_repository:
