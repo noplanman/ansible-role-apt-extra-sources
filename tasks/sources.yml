@@ -1,0 +1,21 @@
+---
+- name: Add all extra repository GPG keys from URL
+  apt_key:
+    url: "{{ item.url }}"
+    state: "{{ item.state | default('present') }}"
+  with_items: "{{ extra_sources_keys | default([]) }}"
+  when: item.url is defined
+
+- name: Add all extra repository GPG keys from Keyserver
+  apt_key:
+    keyserver: "{{ item.keyserver }}"
+    id: "{{ item.id }}"
+    state: "{{ item.state | default('present') }}"
+  with_items: "{{ extra_sources_keys | default([]) }}"
+  when: item.keyserver is defined and item.id is defined
+
+- name: Add all extra repository sources
+  apt_repository:
+    repo: "{{ item.repo }}"
+    state: "{{ item.state | default('present') }}"
+  with_items: "{{ extra_sources_repos | default([]) }}"

@@ -1,0 +1,12 @@
+---
+- include: mariadb.yml
+  when: extra_sources_mariadb
+- include: mysql.yml
+  when: extra_sources_mysql
+- include: nginx.yml
+  when: extra_sources_nginx
+- include: php71.yml
+  when: extra_sources_php71
+- include: tor.yml
+  when: extra_sources_tor
+- include: sources.yml

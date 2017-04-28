@@ -1,0 +1,10 @@
+---
+# https://www.torproject.org/docs/debian.html.en
+- name: Ensure Tor repository key is installed.
+  apt_key:
+    keyserver: "{{ extra_sources_tor_key_server }}"
+    id: "{{ extra_sources_tor_key_id }}"
+
+- name: Ensure Tor APT repository list is installed.
+  apt_repository:
+    repo: "{{ extra_sources_tor_repo }}"
