@@ -1,6 +1,6 @@
 # Ansible Role to install extra repository sources
 
-[![Build Status][travis-build-status]][travis-tests]
+<!-- [![Build Status][travis-build-status]][travis-tests] -->
 
 Installs extra repository sources on Debian/Ubuntu servers.
 

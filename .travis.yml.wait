@@ -1,3 +1,11 @@
+
+###
+# Don't test for now, as it seems that when testing with Travis, the key installs don't always work.
+# e.g.
+# Failed to validate the SSL certificate for nginx.org:443.
+# The exception msg was: hostname 'nginx.org' doesn't match either of '*.nginx.com', 'nginx.com'."
+###
+
 sudo: required
 dist: trusty
 
