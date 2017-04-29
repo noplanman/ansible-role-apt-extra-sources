@@ -4,6 +4,7 @@
   become: yes
   roles: [../../]
   vars:
+    apt_extra_sources_dotdeb: yes
     apt_extra_sources_mariadb: yes
     apt_extra_sources_mysql: yes
     apt_extra_sources_nginx: yes

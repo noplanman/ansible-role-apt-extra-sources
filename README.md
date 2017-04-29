@@ -1,16 +1,19 @@
 # Ansible Role to install extra repository sources
 
-<!-- [![Build Status][travis-build-status]][travis-tests] -->
+[![Build Status][travis-build-status]][travis-tests]
 
 Installs extra repository sources on Debian/Ubuntu servers.
 
+**Important!** Make sure you check if your distribution and release is supported. Click the links below to see the most up-to-date availability.
+
 Available out of the box:
-- [MariaDB][setup-mariadb]
-- [MySQL][setup-mysql]
-- [Nginx][setup-nginx]
-- [PHP 7.1][setup-php71]
-- [PostgreSQL][setup-postgresql]
-- [Tor][setup-tor]
+- [Dotdeb][setup-dotdeb] (wheezy, jessie)
+- [MariaDB][setup-mariadb] (wheezy, jessie, stretch, sid, precise, trusty, xenial, yakkety)
+- [MySQL][setup-mysql] (wheezy, jessie, precise, trusty, utopic, vivid, xenial)
+- [Nginx][setup-nginx] (wheezy, jessie, stretch, precise, trusty, xenial, yakkety)
+- [PHP 7.1][setup-php71] (jessie, stretch)
+- [PostgreSQL][setup-postgresql] (wheezy, jessie, stretch, precise, trusty, xenial)
+- [Tor][setup-tor] (wheezy, jessie, stretch, sid, precise, trusty, xenial)
 
 Easily install and remove keys and repositories using the `apt_extra_sources_keys` and `apt_extra_sources_repos` variables.
 
@@ -70,6 +73,7 @@ MIT
 [travis-build-status]: https://travis-ci.org/noplanman/ansible-extra-sources.svg?branch=master "Travis-CI Build Status"
 [travis-tests]: https://travis-ci.org/noplanman/ansible-extra-sources "Travis-CI Tests"
 [defaults]: https://travis-ci.org/noplanman/ansible-extra-sources/blob/master/defaults/main.yml "Default variables"
+[setup-dotdeb]: https://www.dotdeb.org/instructions/ "Setup Dotdeb repository"
 [setup-mariadb]: https://downloads.mariadb.org/mariadb/repositories/ "Setup MariaDB repository"
 [setup-mysql]: https://dev.mysql.com/doc/mysql-apt-repo-quick-guide/en/#repo-qg-apt-repo-manual-setup "Setup MySQL repository"
 [setup-nginx]: https://nginx.org/en/linux_packages.html#stable "Setup Nginx repository"

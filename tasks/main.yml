@@ -1,7 +1,10 @@
 ---
+# Distribution limits are to prevent errors during tests on Ubuntu machine.
 
 - set_fact: apt_extra_sources_changed=no
 
+- include: dotdeb.yml
+  when: apt_extra_sources_dotdeb and ansible_distribution == "Debian"
 - include: mariadb.yml
   when: apt_extra_sources_mariadb
 - include: mysql.yml
@@ -9,7 +12,7 @@
 - include: nginx.yml
   when: apt_extra_sources_nginx
 - include: php71.yml
-  when: apt_extra_sources_php71 and ansible_distribution_release in ["jessie", "stretch"]
+  when: apt_extra_sources_php71 and ansible_distribution == "Debian"
 - include: postgresql.yml
   when: apt_extra_sources_postgresql
 - include: tor.yml
