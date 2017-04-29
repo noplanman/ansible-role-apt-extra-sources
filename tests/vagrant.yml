@@ -15,4 +15,4 @@
       shell: "ls /etc/apt/sources.list.d/*.list | wc -l"
       register: list_count
       changed_when: false
-      failed_when: list_count.stdout != 6
+      failed_when: list_count.stdout != "6"

@@ -18,4 +18,9 @@
   apt_repository:
     repo: "{{ item.repo }}"
     state: "{{ item.state | default('present') }}"
+    update_cache: no
   with_items: "{{ extra_sources_repos | default([]) }}"
+  register: _extra_sources_changed
+
+- set_fact: extra_sources_changed=yes
+  when: _extra_sources_changed.changed

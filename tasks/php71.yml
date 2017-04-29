@@ -15,3 +15,8 @@
 - name: Ensure PHP 7.1 APT repository list is installed.
   apt_repository:
     repo: "{{ extra_sources_php71_repo }}"
+    update_cache: no
+  register: _extra_sources_changed
+
+- set_fact: extra_sources_changed=yes
+  when: _extra_sources_changed.changed
