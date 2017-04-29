@@ -3,7 +3,7 @@
   apt_key:
     url: "{{ item.url }}"
     state: "{{ item.state | default('present') }}"
-  with_items: "{{ extra_sources_keys | default([]) }}"
+  with_items: "{{ apt_extra_sources_keys | default([]) }}"
   when: item.url is defined
 
 - name: Add all extra repository GPG keys from Keyserver
@@ -11,7 +11,7 @@
     keyserver: "{{ item.keyserver }}"
     id: "{{ item.id }}"
     state: "{{ item.state | default('present') }}"
-  with_items: "{{ extra_sources_keys | default([]) }}"
+  with_items: "{{ apt_extra_sources_keys | default([]) }}"
   when: item.keyserver is defined and item.id is defined
 
 - name: Add all extra repository sources
@@ -19,8 +19,8 @@
     repo: "{{ item.repo }}"
     state: "{{ item.state | default('present') }}"
     update_cache: no
-  with_items: "{{ extra_sources_repos | default([]) }}"
-  register: _extra_sources_changed
+  with_items: "{{ apt_extra_sources_repos | default([]) }}"
+  register: _apt_extra_sources_changed
 
-- set_fact: extra_sources_changed=yes
-  when: _extra_sources_changed.changed
+- set_fact: apt_extra_sources_changed=yes
+  when: _apt_extra_sources_changed.changed

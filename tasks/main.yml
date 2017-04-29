@@ -1,22 +1,22 @@
 ---
 
-- set_fact: extra_sources_changed=no
+- set_fact: apt_extra_sources_changed=no
 
 - include: mariadb.yml
-  when: extra_sources_mariadb
+  when: apt_extra_sources_mariadb
 - include: mysql.yml
-  when: extra_sources_mysql
+  when: apt_extra_sources_mysql
 - include: nginx.yml
-  when: extra_sources_nginx
+  when: apt_extra_sources_nginx
 - include: php71.yml
-  when: extra_sources_php71
+  when: apt_extra_sources_php71
 - include: postgresql.yml
-  when: extra_sources_postgresql
+  when: apt_extra_sources_postgresql
 - include: tor.yml
-  when: extra_sources_tor
+  when: apt_extra_sources_tor
 - include: sources.yml
 
 - name: Update cache if sources changed
   apt: update_cache=yes
   changed_when: no
-  when: extra_sources_changed == True
+  when: apt_extra_sources_changed == True

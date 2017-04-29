@@ -12,7 +12,7 @@ Available out of the box:
 - [PostgreSQL][setup-postgresql]
 - [Tor][setup-tor]
 
-Easily install and remove keys and repositories using the `extra_sources_keys` and `extra_sources_repos` variables.
+Easily install and remove keys and repositories using the `apt_extra_sources_keys` and `apt_extra_sources_repos` variables.
 
 ## Requirements
 
@@ -27,25 +27,25 @@ Main variables:
 
 ```yaml
 # Pre-packaged
-extra_sources_mariadb: yes
-extra_sources_mysql: yes
-extra_sources_mysql_version: 5.7 # can be either 5.6 or 5.7
-extra_sources_nginx: yes
-extra_sources_php71: yes
-extra_sources_tor: yes
+apt_extra_sources_mariadb: yes
+apt_extra_sources_mysql: yes
+apt_extra_sources_mysql_version: 5.7 # can be either 5.6 or 5.7
+apt_extra_sources_nginx: yes
+apt_extra_sources_php71: yes
+apt_extra_sources_tor: yes
 
 # Manually add
-extra_sources_keys:
+apt_extra_sources_keys:
   - url: "https://www.dotdeb.org/dotdeb.gpg"
   - { keyserver: keys.gnupg.net, id: A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 }
-extra_sources_repos:
+apt_extra_sources_repos:
   - repo: "deb http://packages.dotdeb.org jessie all"
   - repo: "deb http://deb.torproject.org/torproject.org jessie main"
 
 # Manually remove
-extra_sources_keys:
+apt_extra_sources_keys:
   - { url: "https://www.dotdeb.org/dotdeb.gpg", state: absent }
-extra_sources_repos:
+apt_extra_sources_repos:
   - { repo: "deb http://packages.dotdeb.org jessie all", state: absent }
 ```
 

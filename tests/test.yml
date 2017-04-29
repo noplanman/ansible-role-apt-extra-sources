@@ -4,15 +4,15 @@
   become: yes
   roles: [../../]
   vars:
-    extra_sources_mariadb: yes
-    extra_sources_mysql: yes
-    extra_sources_nginx: yes
-    extra_sources_php71: yes
-    extra_sources_postgresql: yes
-    extra_sources_tor: yes
+    apt_extra_sources_mariadb: yes
+    apt_extra_sources_mysql: yes
+    apt_extra_sources_nginx: yes
+    apt_extra_sources_php71: yes
+    apt_extra_sources_postgresql: yes
+    apt_extra_sources_tor: yes
   post_tasks:
     - name: Check all repos are loaded
       shell: "ls /etc/apt/sources.list.d/*.list | wc -l"
       register: list_count
       changed_when: false
-      failed_when: list_count.stdout != 6
+      failed_when: list_count.stdout != "6"

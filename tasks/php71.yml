@@ -10,13 +10,13 @@
 
 - name: Ensure PHP 7.1 trusted GPG key is installed.
   apt_key:
-    url: "{{ extra_sources_php71_key_url }}"
+    url: "{{ apt_extra_sources_php71_key_url }}"
 
 - name: Ensure PHP 7.1 APT repository list is installed.
   apt_repository:
-    repo: "{{ extra_sources_php71_repo }}"
+    repo: "{{ apt_extra_sources_php71_repo }}"
     update_cache: no
-  register: _extra_sources_changed
+  register: _apt_extra_sources_changed
 
-- set_fact: extra_sources_changed=yes
-  when: _extra_sources_changed.changed
+- set_fact: apt_extra_sources_changed=yes
+  when: _apt_extra_sources_changed.changed
