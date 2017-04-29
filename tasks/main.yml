@@ -9,7 +9,7 @@
 - include: nginx.yml
   when: apt_extra_sources_nginx
 - include: php71.yml
-  when: apt_extra_sources_php71
+  when: apt_extra_sources_php71 and ansible_distribution_release in ["jessie", "stretch"]
 - include: postgresql.yml
   when: apt_extra_sources_postgresql
 - include: tor.yml
