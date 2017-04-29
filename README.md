@@ -9,6 +9,7 @@ Available out of the box:
 - [MySQL][setup-mysql]
 - [Nginx][setup-nginx]
 - [PHP 7.1][setup-php71]
+- [PostgreSQL][setup-postgresql]
 - [Tor][setup-tor]
 
 Easily install and remove keys and repositories using the `extra_sources_keys` and `extra_sources_repos` variables.
@@ -73,4 +74,5 @@ MIT
 [setup-mysql]: https://dev.mysql.com/doc/mysql-apt-repo-quick-guide/en/#repo-qg-apt-repo-manual-setup "Setup MySQL repository"
 [setup-nginx]: https://nginx.org/en/linux_packages.html#stable "Setup Nginx repository"
 [setup-php71]: https://packages.sury.org/php/README.txt "Setup PHP 7.1 repository"
+[setup-postgresql]: https://www.postgresql.org/download/linux/ "Setup PostgreSQL"
 [setup-tor]: https://www.torproject.org/docs/debian.html.en "Setup Tor repository"

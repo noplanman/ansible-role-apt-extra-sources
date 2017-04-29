@@ -7,6 +7,8 @@
   when: extra_sources_nginx
 - include: php71.yml
   when: extra_sources_php71
+- include: postgresql.yml
+  when: extra_sources_postgresql
 - include: tor.yml
   when: extra_sources_tor
 - include: sources.yml

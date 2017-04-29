@@ -1,0 +1,9 @@
+---
+# https://www.postgresql.org/download/linux/
+- name: Ensure PostgreSQL repository key is installed.
+  apt_key:
+    url: "{{ extra_sources_postgresql_key_url }}"
+
+- name: Ensure PostgreSQL APT repository list is installed.
+  apt_repository:
+    repo: "{{ extra_sources_postgresql_repo }}"
