@@ -37,6 +37,9 @@ apt_extra_sources_nginx: yes
 apt_extra_sources_php71: yes
 apt_extra_sources_tor: yes
 
+# Modify pre-packaged
+apt_extra_sources_tor_repo: "deb http://deb.torproject.org/torproject.org tor-experimental-0.3.2.x-stretch main"
+
 # Manually add
 apt_extra_sources_keys:
   - url: "https://www.dotdeb.org/dotdeb.gpg"
@@ -63,16 +66,16 @@ None.
 - hosts: servers
   become: yes
   roles:
-    - role: noplanman.extra-sources
+    - role: noplanman.apt-extra-sources
 ```
 
 ## License
 
 MIT
 
-[travis-build-status]: https://travis-ci.org/noplanman/ansible-apt-extra-sources.svg?branch=master "Travis-CI Build Status"
-[travis-tests]: https://travis-ci.org/noplanman/ansible-apt-extra-sources "Travis-CI Tests"
-[defaults]: https://github.com/noplanman/ansible-apt-extra-sources/blob/master/defaults/main.yml "Default variables"
+[travis-build-status]: https://travis-ci.org/noplanman/ansible-role-apt-extra-sources.svg?branch=master "Travis-CI Build Status"
+[travis-tests]: https://travis-ci.org/noplanman/ansible-role-apt-extra-sources "Travis-CI Tests"
+[defaults]: https://github.com/noplanman/ansible-role-apt-extra-sources/blob/master/defaults/main.yml "Default variables"
 [setup-dotdeb]: https://www.dotdeb.org/instructions/ "Setup Dotdeb repository"
 [setup-mariadb]: https://downloads.mariadb.org/mariadb/repositories/ "Setup MariaDB repository"
 [setup-mysql]: https://dev.mysql.com/doc/mysql-apt-repo-quick-guide/en/#repo-qg-apt-repo-manual-setup "Setup MySQL repository"
