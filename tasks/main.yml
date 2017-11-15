@@ -1,5 +1,5 @@
 ---
-# Distribution limits are to prevent errors during tests on Ubuntu machine.
+# Distribution limits are given by the availability of the packages themselves.
 
 - set_fact: apt_extra_sources_changed=no
 

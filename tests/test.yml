@@ -1,13 +1,23 @@
 ---
-- hosts: localhost
-  connection: local
+- hosts: all
   become: yes
-  roles: [../../]
+  roles: [role_under_test]
+
   vars:
     apt_extra_sources_dotdeb: yes
     apt_extra_sources_mariadb: yes
-    apt_extra_sources_mysql: yes
-    apt_extra_sources_nginx: yes
     apt_extra_sources_php71: yes
-    apt_extra_sources_postgresql: yes
-    apt_extra_sources_tor: yes
+    apt_extra_sources_tor: ansible_distribution_release not in ['precise']
+    apt_extra_sources_keys:
+      - url: "https://nginx.org/keys/nginx_signing.key"
+    apt_extra_sources_repos:
+      - repo: "deb http://nginx.org/packages/{{ apt_extra_sources_distro }}/ {{ apt_extra_sources_distro_release }} nginx"
+
+  pre_tasks:
+    - name: Update apt cache.
+      apt: update_cache=yes cache_valid_time=600
+      when: ansible_os_family == 'Debian'
+      changed_when: false
+
+    - name: Ensure dependencies are installed.
+      package: name=gnupg

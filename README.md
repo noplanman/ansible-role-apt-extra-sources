@@ -19,7 +19,7 @@ Easily install and remove keys and repositories using the `apt_extra_sources_key
 
 ## Requirements
 
-None.
+GnuPG, which can be installed using `apt-get install gnupg` (or see `tests/test.yml`).
 
 ## Role Variables
 
