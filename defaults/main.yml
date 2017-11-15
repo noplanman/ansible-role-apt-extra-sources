@@ -7,9 +7,9 @@ apt_extra_sources_dotdeb_key_url: https://www.dotdeb.org/dotdeb.gpg
 apt_extra_sources_dotdeb_repo: "deb http://packages.dotdeb.org {{ apt_extra_sources_distro_release }} all"
 
 apt_extra_sources_mariadb: no
-apt_extra_sources_mariadb_version: 10.1
+apt_extra_sources_mariadb_version: 10.2
 apt_extra_sources_mariadb_key_server: keyserver.ubuntu.com
-apt_extra_sources_mariadb_key_id: cbcb082a1bb943db
+apt_extra_sources_mariadb_key_id: F1656F24C74CD1D8
 apt_extra_sources_mariadb_repo: "deb http://mirror.rackspeed.de/mariadb.org/repo/{{ apt_extra_sources_mariadb_version }}/{{ apt_extra_sources_distro }} {{ apt_extra_sources_distro_release }} main"
 
 apt_extra_sources_mysql: no
