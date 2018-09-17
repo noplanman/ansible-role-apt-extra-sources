@@ -1,4 +1,6 @@
 ---
+dependencies: []
+
 galaxy_info:
   author: Armando Lüscher
   description: Add extra source repositories on a Debian-like system.
@@ -7,12 +9,13 @@ galaxy_info:
   platforms:
     - name: Ubuntu
       versions:
-        - precise
-        - trusty
+        - bionic
         - xenial
+        - trusty
+        - precise
     - name: Debian
       versions:
-        - wheezy
+        - stretch
         - jessie
   galaxy_tags:
     - apt
@@ -21,4 +24,3 @@ galaxy_info:
     - source
     - install
     - update
-dependencies: []

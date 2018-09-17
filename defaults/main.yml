@@ -32,5 +32,5 @@ apt_extra_sources_php71_repo: "deb https://packages.sury.org/php/ {{ apt_extra_s
 
 apt_extra_sources_tor: no
 apt_extra_sources_tor_key_server: keys.gnupg.net
-apt_extra_sources_tor_key_id: A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89
+apt_extra_sources_tor_key_id: #A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 (expired!)
 apt_extra_sources_tor_repo: "deb http://deb.torproject.org/torproject.org {{ apt_extra_sources_distro_release }} main"

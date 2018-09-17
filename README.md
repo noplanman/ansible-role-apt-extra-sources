@@ -43,10 +43,10 @@ apt_extra_sources_tor_repo: "deb http://deb.torproject.org/torproject.org tor-ex
 # Manually add
 apt_extra_sources_keys:
   - url: "https://www.dotdeb.org/dotdeb.gpg"
-  - { keyserver: keys.gnupg.net, id: A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 }
+  - { keyserver: keyserver.ubuntu.com, id: F1656F24C74CD1D8 }
 apt_extra_sources_repos:
   - repo: "deb http://packages.dotdeb.org jessie all"
-  - repo: "deb http://deb.torproject.org/torproject.org jessie main"
+  - repo: "deb http://mirror.rackspeed.de/mariadb.org/repo/10.2/debian stretch main"
 
 # Manually remove
 apt_extra_sources_keys:

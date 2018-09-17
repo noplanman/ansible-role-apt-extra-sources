@@ -16,7 +16,7 @@
 - include: postgresql.yml
   when: apt_extra_sources_postgresql
 - include: tor.yml
-  when: apt_extra_sources_tor
+  when: apt_extra_sources_tor and ansible_distribution == "Debian"
 - include: sources.yml
 
 - name: Update cache if sources changed
