@@ -19,7 +19,7 @@ Easily install and remove keys and repositories using the `apt_extra_sources_key
 
 ## Requirements
 
-GnuPG, which can be installed using `apt-get install gnupg` (or see `tests/test.yml`).
+None.
 
 ## Role Variables
 
@@ -32,13 +32,13 @@ Main variables:
 # Pre-packaged
 apt_extra_sources_mariadb: yes
 apt_extra_sources_mysql: yes
-apt_extra_sources_mysql_version: 5.7 # can be either 5.6 or 5.7
+apt_extra_sources_mysql_version: 5.7 # can be either 5.6, 5.7 or 8.0
 apt_extra_sources_nginx: yes
 apt_extra_sources_php71: yes
 apt_extra_sources_tor: yes
 
 # Modify pre-packaged
-apt_extra_sources_tor_repo: "deb http://deb.torproject.org/torproject.org tor-experimental-0.3.2.x-stretch main"
+apt_extra_sources_tor_repo: "deb http://deb.torproject.org/torproject.org tor-experimental-0.3.5.x-stretch main"
 
 # Manually add
 apt_extra_sources_keys:

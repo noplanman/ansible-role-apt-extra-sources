@@ -3,6 +3,9 @@
 
 - set_fact: apt_extra_sources_changed=no
 
+- name: Update cache and ensure gnupg is installed
+  apt: name=gnupg update_cache=yes cache_valid_time=86400
+
 - include: dotdeb.yml
   when: apt_extra_sources_dotdeb and ansible_distribution == "Debian"
 - include: mariadb.yml
@@ -16,7 +19,7 @@
 - include: postgresql.yml
   when: apt_extra_sources_postgresql
 - include: tor.yml
-  when: apt_extra_sources_tor and ansible_distribution == "Debian"
+  when: apt_extra_sources_tor
 - include: sources.yml
 
 - name: Update cache if sources changed
