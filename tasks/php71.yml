@@ -1,13 +1,5 @@
 ---
 # https://packages.sury.org/php/README.txt
-- name: Ensure necessary APT packages are installed.
-  apt:
-    name: "{{ item }}"
-    state: present
-  with_items:
-    - apt-transport-https
-    - ca-certificates
-
 - name: Ensure PHP 7.1 trusted GPG key is installed.
   apt_key:
     url: "{{ apt_extra_sources_php71_key_url }}"
