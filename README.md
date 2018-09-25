@@ -1,19 +1,27 @@
 # Ansible Role to install extra repository sources
 
-[![Build Status][travis-build-status]][travis-tests]
+[![Build Status][travis-build-status]][travis-tests] [![Ansible Role][ansible-role-shield]][ansible-role]
+
+---
+
+:rocket: Development has moved to **[git.feneas.org]**.
+
+(The repository on GitHub is only a mirror, so fork on Feneas to contribute. No registration needed, just sign in with your GitHub account.)
+
+---
 
 Installs extra repository sources on Debian/Ubuntu servers.
 
 **Important!** Make sure you check if your distribution and release is supported. Click the links below to see the most up-to-date availability.
 
 Available out of the box:
-- [Dotdeb][setup-dotdeb] (wheezy, jessie)
-- [MariaDB][setup-mariadb] (wheezy, jessie, stretch, sid, precise, trusty, xenial, yakkety)
-- [MySQL][setup-mysql] (wheezy, jessie, precise, trusty, utopic, vivid, xenial)
-- [Nginx][setup-nginx] (wheezy, jessie, stretch, precise, trusty, xenial, yakkety)
-- [PHP 7.1][setup-php71] (jessie, stretch)
-- [PostgreSQL][setup-postgresql] (wheezy, jessie, stretch, precise, trusty, xenial)
-- [Tor][setup-tor] (wheezy, jessie, stretch, sid, precise, trusty, xenial)
+- [Dotdeb][setup-dotdeb]
+- [MariaDB][setup-mariadb]
+- [MySQL][setup-mysql]
+- [Nginx][setup-nginx]
+- [PHP 7.1][setup-php71]
+- [PostgreSQL][setup-postgresql]
+- [Tor][setup-tor]
 
 Easily install and remove keys and repositories using the `apt_extra_sources_keys` and `apt_extra_sources_repos` variables.
 
@@ -66,20 +74,30 @@ None.
 - hosts: servers
   become: yes
   roles:
-    - role: noplanman.apt-extra-sources
+    - role: noplanman.apt_extra_sources
 ```
+
+## Tests
+
+Docker is used to test the role with different operating systems.
+
+Check the [`tests`] folder.
 
 ## License
 
 MIT
 
-[travis-build-status]: https://travis-ci.org/noplanman/ansible-role-apt-extra-sources.svg?branch=master "Travis-CI Build Status"
+[travis-build-status]: https://img.shields.io/travis/noplanman/ansible-role-apt-extra-sources.svg?style=flat-square "Travis-CI Build Status"
 [travis-tests]: https://travis-ci.org/noplanman/ansible-role-apt-extra-sources "Travis-CI Tests"
-[defaults]: https://github.com/noplanman/ansible-role-apt-extra-sources/blob/master/defaults/main.yml "Default variables"
+[ansible-role-shield]: https://img.shields.io/ansible/role/29793.svg?style=flat-square "Apt Extra Sources on Ansible Galaxy"
+[ansible-role]: https://galaxy.ansible.com/noplanman/apt_extra_sources "Apt Extra Sources on Ansible Galaxy"
+[git.feneas.org]: https://git.feneas.org/noplanman/ansible-role-apt-extra-sources "Ansible Role Apt Extra Sources on Feneas"
 [setup-dotdeb]: https://www.dotdeb.org/instructions/ "Setup Dotdeb repository"
 [setup-mariadb]: https://downloads.mariadb.org/mariadb/repositories/ "Setup MariaDB repository"
 [setup-mysql]: https://dev.mysql.com/doc/mysql-apt-repo-quick-guide/en/#repo-qg-apt-repo-manual-setup "Setup MySQL repository"
 [setup-nginx]: https://nginx.org/en/linux_packages.html#stable "Setup Nginx repository"
 [setup-php71]: https://packages.sury.org/php/README.txt "Setup PHP 7.1 repository"
-[setup-postgresql]: https://www.postgresql.org/download/linux/ "Setup PostgreSQL"
+[setup-postgresql]: https://www.postgresql.org/download/linux/ "Setup PostgreSQL repository"
 [setup-tor]: https://www.torproject.org/docs/debian.html.en "Setup Tor repository"
+[defaults]: https://git.feneas.org/noplanman/ansible-role-apt-extra-sources/blob/master/defaults/main.yml "Default variables"
+[`tests`]: https://git.feneas.org/noplanman/ansible-role-apt-extra-sources/tree/master/tests "Tests"

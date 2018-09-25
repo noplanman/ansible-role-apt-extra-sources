@@ -2,10 +2,12 @@
 dependencies: []
 
 galaxy_info:
+  role_name: apt_extra_sources
+  description: Add extra repository sources on a Debian-like system.
   author: Armando Lüscher
-  description: Add extra source repositories on a Debian-like system.
   license: MIT
   min_ansible_version: 2.0.0.0
+  issue_tracker_url: https://git.feneas.org/noplanman/ansible-role-apt-extra-sources/issues
   platforms:
     - name: Ubuntu
       versions:
