@@ -89,7 +89,7 @@ MIT
 
 [travis-build-status]: https://img.shields.io/travis/noplanman/ansible-role-apt-extra-sources.svg?style=flat-square "Travis-CI Build Status"
 [travis-tests]: https://travis-ci.org/noplanman/ansible-role-apt-extra-sources "Travis-CI Tests"
-[ansible-role-shield]: https://img.shields.io/ansible/role/29793.svg?style=flat-square "Apt Extra Sources on Ansible Galaxy"
+[ansible-role-shield]: https://img.shields.io/ansible/role/30052.svg?style=flat-square "Apt Extra Sources on Ansible Galaxy"
 [ansible-role]: https://galaxy.ansible.com/noplanman/apt_extra_sources "Apt Extra Sources on Ansible Galaxy"
 [git.feneas.org]: https://git.feneas.org/noplanman/ansible-role-apt-extra-sources "Ansible Role Apt Extra Sources on Feneas"
 [setup-dotdeb]: https://www.dotdeb.org/instructions/ "Setup Dotdeb repository"
