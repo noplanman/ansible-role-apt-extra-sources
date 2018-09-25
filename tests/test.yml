@@ -5,7 +5,7 @@
 
   vars:
     apt_extra_sources_dotdeb: yes
-    apt_extra_sources_mariadb: ansible_distribution_release not in ['bionic']
+    apt_extra_sources_mariadb: ansible_distribution_release not in ['precise', 'bionic']
     apt_extra_sources_php71: yes
     apt_extra_sources_tor: ansible_distribution_release not in ['precise']
     apt_extra_sources_keys:
