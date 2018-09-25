@@ -5,7 +5,7 @@
 
   vars:
     apt_extra_sources_dotdeb: yes
-    apt_extra_sources_mariadb: yes
+    apt_extra_sources_mariadb: ansible_distribution_release not in ['bionic']
     apt_extra_sources_php71: yes
     apt_extra_sources_tor: ansible_distribution_release not in ['precise']
     apt_extra_sources_keys:
@@ -18,6 +18,3 @@
       apt: update_cache=yes cache_valid_time=600
       when: ansible_os_family == 'Debian'
       changed_when: false
-
-    - name: Ensure dependencies are installed.
-      package: name=gnupg
